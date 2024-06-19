@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/ContendCms.js" defer></script>
+</head>
+
+<body>
+    <contend-cms-elements id="custom-elements" source-url="/mock-responses/example.json"></contend-cms-elements>
+
+    <script defer>
+        setTimeout(() => {
+            const customElements = document.querySelector("#custom-elements");
+            customElements.setAttribute("source-url", "/mock-responses/example2.json");
+        }, 5000);
+    </script>
+</body>
+
+</html>

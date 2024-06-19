@@ -1,0 +1,14 @@
+{
+    "scripts": [
+        "/js/Card.js"
+    ],
+    "elements": [
+        {
+            "elementType": "card",
+            "elementId": "card-1",
+            "properties": {
+                "header": "Helle from the API2!"
+            }
+        }
+    ]
+}

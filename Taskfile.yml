@@ -1,0 +1,13 @@
+version: '3'
+
+
+tasks:
+  install:
+    deps:
+     - npm i -g http-server
+
+  run-frontend-poc:
+    dir: poc/frontend
+    cmds:
+      - http-server -p 8080 .
+      - open 127.0.0.1:8080
