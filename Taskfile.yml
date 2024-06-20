@@ -1,13 +1,18 @@
 version: '3'
 
+run: when_changed
 
 tasks:
   install:
-    deps:
+    status:
+      - http-server --version
+    cmds:
      - npm i -g http-server
 
   run-frontend-poc:
     dir: poc/frontend
+    deps:
+      - task: install
     cmds:
       - http-server -p 8080 .
       - open 127.0.0.1:8080
