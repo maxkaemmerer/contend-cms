@@ -19,10 +19,25 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
       working-directory: ./e2e
-    - name: Install http-server
-      run: npm i -g http-server
-    - name: Run Frontend POC
-      run: http-server -p 8080 . &
+    - name: Serve Files
+      uses: Eun/http-server-action@v1
+      with:
+        directory: ./poc/frontend
+        port: 8080
+        no-cache: true
+        index-files: |
+          ["index.html"]
+        allowed-methods: |
+          ["GET", "HEAD"]
+        content-types: |
+          {
+            "css": "text/css",
+            "html": "text/html",
+            "js": "text/javascript",
+            "json": "application/json"
+          }
+        log: "log.txt"
+        logTime: "false"
     - name: Run Playwright tests
       run: npx playwright test
       working-directory: ./e2e
