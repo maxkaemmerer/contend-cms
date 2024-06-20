@@ -22,7 +22,7 @@ jobs:
     - name: Install http-server
       run: npm i -g http-server
     - name: Run Frontend POC
-      run: http-server -p 8080 .
+      run: http-server -p 8080 . &
     - name: Run Playwright tests
       run: npx playwright test
       working-directory: ./e2e
