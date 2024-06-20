@@ -19,6 +19,8 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
       working-directory: ./e2e
+    - name: Run Frontend POC
+      run: task run-frontend-poc
     - name: Run Playwright tests
       run: npx playwright test
       working-directory: ./e2e
